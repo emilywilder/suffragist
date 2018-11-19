@@ -17,3 +17,8 @@ post '/cast' do
   @vote = params['vote']
   erb :cast
 end
+
+get '/results' do
+  @votes = { 'HAM' => 7, 'PIZ' => 5, 'CUR' => 3 }
+  erb :results
+end
