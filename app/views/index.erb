@@ -1,11 +1,11 @@
 <p>What's for dinner?</p>
 <form action="cast" method="post">
   <ul class="unstyled">
-    <% Choices.each do |id, text| %>
+    <% @choices.each do |choice| %>
       <li>
         <label class="radio">
-          <input type="radio" name="vote" value="<%= id %>" id="vote_<%= id %>" />
-          <%= text %>
+          <input type="radio" name="vote" value="<%= choice.id %>" id="vote_<%= choice.id %>" />
+          <%= choice.name %>
         </label>
       </li>
     <% end %>

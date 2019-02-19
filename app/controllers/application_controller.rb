@@ -7,6 +7,7 @@ class ApplicationController < Sinatra::Base
 
     get '/' do
       @title = 'Welcome to the Suffragist!'
+      @choices = Choice.all
       erb :index
     end
 
