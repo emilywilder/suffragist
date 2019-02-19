@@ -13,13 +13,10 @@ class ApplicationController < Sinatra::Base
 
     post '/cast' do
       @title = 'Thanks for casting your vote!'
-      @vote = params['vote']
-      @store = YAML::Store.new 'votes.yml'
-      @store.transaction do
-        @store['votes'] ||= {}
-        @store['votes'][@vote] ||= 0
-        @store['votes'][@vote] += 1
-      end
+      choice = Choice.find(params["vote"].to_i)
+      @vote = choice.name
+      choice.votes += 1
+      choice.save
       erb :cast
     end
 
