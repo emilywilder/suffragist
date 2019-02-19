@@ -1,5 +1,3 @@
-require 'sinatra'
-require 'yaml/store'
 
 Choices = {
     'HAM' => 'Hamburger',
@@ -8,7 +6,11 @@ Choices = {
     'NOO' => 'Noodles',
 }
 
-class Suffragist < Sinatra::Base
+class ApplicationController < Sinatra::Base
+
+    configure do
+      set :views, 'app/views'
+    end
 
     get '/' do
       @title = 'Welcome to the Suffragist!'
