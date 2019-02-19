@@ -22,8 +22,7 @@ class ApplicationController < Sinatra::Base
 
     get '/results' do
       @title = 'Results so far:'
-      @store = YAML::Store.new 'votes.yml'
-      @votes = @store.transaction { @store['votes'] }
+      @choices = Choice.all
       erb :results
     end
 

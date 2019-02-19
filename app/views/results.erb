@@ -1,9 +1,9 @@
 <table class="table table-hover table-stripper">
-  <% Choices.each do |id, text| %>
+  <% @choices.each do |choice| %>
     <tr>
-      <th><%= text %></th>
-      <td><%= @votes[id] || 0 %></td>
-      <td><%= '#' * (@votes[id] || 0) %></td>
+      <th><%= choice.name %></th>
+      <td><%= choice.votes %></td>
+      <td><%= '#' * choice.votes %></td>
     </tr>
   <% end %>
 </table>
