@@ -1,15 +1,8 @@
-
-Choices = {
-    'HAM' => 'Hamburger',
-    'PIZ' => 'Pizza',
-    'CUR' => 'Curry',
-    'NOO' => 'Noodles',
-}
-
 class ApplicationController < Sinatra::Base
 
     configure do
       set :views, 'app/views'
+      set :database_file, 'config/database.yml'
     end
 
     get '/' do

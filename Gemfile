@@ -1,7 +1,11 @@
 source 'https://rubygems.org'
 
 gem 'require_all'
-gem 'sinatra'
 gem 'pry'
 gem 'rack'
+gem 'rake'
 gem 'thin'
+gem 'sqlite3', '~>1.3.6'
+gem 'activerecord'
+gem 'sinatra-activerecord'
+gem 'byebug'
