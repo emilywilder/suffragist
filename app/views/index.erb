@@ -12,4 +12,11 @@
   </ul>
   <button type="submit" class="btn btn-primary">Cast this vote!</button>
 </form>
-<a href="message">Check messages by other suffragists!</a>
+<h3>Messages from other suffragists:</h3>
+<% @messages.each do |message| %>
+  </br>
+  <q><%= message.message %> <b>-<%= message.name %></b></q>
+<% end %>
+<br/>
+<br/>
+<a href="message">Add your message!</a>

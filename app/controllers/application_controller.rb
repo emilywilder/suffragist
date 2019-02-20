@@ -8,6 +8,7 @@ class ApplicationController < Sinatra::Base
   get '/' do
     @title = 'Welcome to the Suffragist!'
     @choices = Choice.all
+    @messages = Message.all
     erb :index
   end
 
@@ -32,10 +33,8 @@ class ApplicationController < Sinatra::Base
   end
 
   post '/message' do
-    @title = 'Thank you for your contribution!'
-    # binding.pry
     @message = Message.create(name: params["name"], message: params["message"])
-    erb :message_post
+    redirect '/'
   end
 
 end
