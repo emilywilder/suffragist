@@ -26,4 +26,16 @@ class ApplicationController < Sinatra::Base
     erb :results
   end
 
+  get '/message' do
+    @title = 'Provide a message for fellow suffragists!'
+    erb :message
+  end
+
+  post '/message' do
+    @title = 'Thank you for your contribution!'
+    # binding.pry
+    @message = Message.create(name: params["name"], message: params["message"])
+    erb :message_post
+  end
+
 end
